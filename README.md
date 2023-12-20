@@ -1,6 +1,4 @@
-<img src="/logo.png" width="25%" />
-
-# Godot Web3 Plugin
+# Godot-Web3 Plugin
 
 Godot plugin for building web3 games.
 
