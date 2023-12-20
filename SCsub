@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+Import('env')
+
+env_module = env.Clone()
+env_module.Prepend(CPPPATH=["thirdparty/trezor-crypto"])
+env_module.Append(CDEFINES=["USE_KECCAK", "USE_ETHEREUM"])
+
+env_trezor_crypto = env_module.Clone()
+env_trezor_crypto.disable_warnings()
+env_trezor_crypto.add_source_files(env.modules_sources, "thirdparty/trezor-crypto/*.c")
+
+env_module.add_source_files(env.modules_sources, "*.cpp")
